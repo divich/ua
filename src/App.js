@@ -6,6 +6,35 @@ import AppBar from "material-ui/AppBar";
 import IconButton from "material-ui/IconButton";
 import ArrowBack from "material-ui/svg-icons/navigation/arrow-back";
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      email: "",
+      contact: "",
+      address: ""
+    };
+  }
+  handleName = (event, name) => {
+    this.setState({
+      name: name
+    });
+  };
+  handleEmail = (event, mail) => {
+    this.setState({
+      email: mail
+    });
+  };
+  handleContact = (event, con) => {
+    this.setState({
+      contact: con
+    });
+  };
+  handleAddress = (event, addr) => {
+    this.setState({
+      address: addr
+    });
+  };
   render() {
     return (
       <MuiThemeProvider>
@@ -34,11 +63,35 @@ class App extends Component {
             margin: 20
           }}
         >
-          <span>NAME: </span> <TextField hintText="Hint Text" />
+          <span>NAME: </span>{" "}
+          <TextField
+            hintText="Enter name"
+            value={this.state.name}
+            onChange={this.handleName}
+          />
           <br />
-          <span>Email: </span> <TextField hintText="Hint Text" /> <br />
-          <span>Contact: </span> <TextField hintText="Hint Text" /> <br />
-          <span>Address: </span> <TextField hintText="Hint Text" /> <br />
+          <span>Email: </span>
+          <TextField
+            hintText="Enter email"
+            value={this.state.email}
+            onChange={this.handleEmail}
+          />
+          <br />
+          <span>Contact: </span>
+          <TextField
+            type="number"
+            hintText="Enter contact"
+            value={this.state.contact}
+            onChange={this.handleContact}
+          />
+          <br />
+          <span>Address: </span>
+          <TextField
+            hintText="Enter address"
+            value={this.state.address}
+            onChange={this.handleAddress}
+          />
+          <br />
         </div>
         <RaisedButton
           label="Submit"
