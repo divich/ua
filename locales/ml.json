@@ -1,0 +1,15 @@
+
+{
+    "register": {
+        "name": "പേര്",
+        "nameHint": "Enter your Full Name",
+        "email": "EmailID",
+        "emailHint": "Enter your email id",
+        "password": "Password",
+        "passwrodHint": "Enter your password",
+        "confirmPassword": "Re enter you password",
+        "registerHeading": "Register Yourself",
+        "wrongEmail": "Please enter a valid email eg: winners@ua.com",
+        "saveButton": "Save"
+    }
+}
