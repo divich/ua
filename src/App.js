@@ -4,25 +4,27 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import RaisedButton from "material-ui/RaisedButton";
 import AppBar from "material-ui/AppBar";
 import IconButton from "material-ui/IconButton";
+import ArrowBack from "material-ui/svg-icons/navigation/arrow-back";
 class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
         <AppBar
-          title="Signup Form"
+          title="Registration Form"
           iconElementLeft={
             <IconButton>
               {this.props.showBackNavigation ? (
-               
+                <ArrowBack
+                  onClick={e => {
+                    e.preventDefault();
+                    this.props.history.goBack();
+                  }}
+                />
               ) : null}
             </IconButton>
           }
         />
-        ) : null}/>
-        <h2 style={{ display: "flex", justifyContent: "center" }}>
-          {" "}
-          Registration Form
-        </h2>
+
         <h3 style={{ color: "green", marginLeft: 20 }}>Signup</h3>
         <div
           style={{
